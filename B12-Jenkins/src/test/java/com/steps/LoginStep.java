@@ -18,6 +18,10 @@ public class LoginStep {
 	
 	@Given("User navigates to login page {string}")
 	public void user_navigates_to_login_page(String url) throws InterruptedException {
+		
+       WebDriverManager.edgedriver().setup();
+       driver = new EdgeDriver();
+       driver.get(url);
 	
 		System.out.println("Navigating to application");	
 		
@@ -48,6 +52,8 @@ public class LoginStep {
 		System.out.println("dashboard page");
 		System.out.println("DONEEEE");
 		
+		
+		driver.quit();
 	}
 }
 
